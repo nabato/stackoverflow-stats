@@ -23,7 +23,7 @@ and go to:
 
 [http://localhost:3000/search?tag=clojure&tag=python&tag=clojurescript](http://localhost:3000/search?tag=clojure&tag=python&tag=clojurescript)
 
-or execute in command line:
+or execute from command line:
 
 ```
 curl http://localhost:3000/search?tag=clojure&tag=python&tag=clojurescript
