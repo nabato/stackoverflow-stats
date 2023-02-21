@@ -13,3 +13,18 @@ To start a web server for the application, run:
 ```
 lein ring server
 ```
+or
+
+```
+lein ring server-headless
+```
+
+and go to:
+
+[http://localhost:3000/search?tag=clojure&tag=python&tag=clojurescript](http://localhost:3000/search?tag=clojure&tag=python&tag=clojurescript)
+
+or execute in command line:
+
+```
+curl http://localhost:3000/search?tag=clojure&tag=python&tag=clojurescript
+```
