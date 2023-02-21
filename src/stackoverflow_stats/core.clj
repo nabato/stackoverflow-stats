@@ -1,4 +1,5 @@
 (ns stackoverflow-stats.core
+  (:use [org.httpkit.server :only [run-server]])
   (:require [clojure.pprint :as pp]
             [cheshire.core :refer :all]
             [compojure.core :refer :all]
@@ -6,8 +7,7 @@
             [compojure.route :as route]
             [org.httpkit.client :as http]
             [ring.middleware.defaults :refer [site-defaults wrap-defaults]]
-            [ring.middleware.reload :as reload])
-  (:use [org.httpkit.server :only [run-server]]))
+            [ring.middleware.reload :as reload]))
 
 ;; as it's a test job done in my spare time, some trivial things that are not mentioned in requirements
 ;; like using a map for query params are omitted and some variables are hardcoded.
