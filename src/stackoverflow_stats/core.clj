@@ -23,7 +23,7 @@
 
 (defn parallel-queue-request [urls]
   ;; firing multiple requests asynchronously all at once and then dereferencing all of them in a single thread is a more effective solution
-  ;;than using a thread-based queue of some type in general.
+  ;; than using a thread-based queue of some type in general.
   (let [client  (org.httpkit.client.HttpClient. max-requests)
         futures (doall (map #(http/get % {:client client}) urls))]
     (map deref futures)))
