@@ -1,7 +1,6 @@
 (ns stackoverflow-stats.core
   (:use [org.httpkit.server :only [run-server]])
-  (:require [clojure.pprint :as pp]
-            [cheshire.core :refer :all]
+  (:require [cheshire.core :refer :all]
             [compojure.core :refer :all]
             [compojure.handler :refer [site]]
             [compojure.route :as route]
@@ -65,7 +64,9 @@
       errors)))
 
 (defn handle-search [tags]
-  (if (nil? tags)
+  (if (or
+       (nil? tags)
+       (and (string? tags) (= (count tags) 0)))
     ""
     (let [result (get-stackoverflow-stats (if (string? tags) [tags] tags))]
       (generate-string result {:pretty true}))))
