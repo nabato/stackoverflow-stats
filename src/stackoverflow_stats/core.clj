@@ -14,7 +14,7 @@
 
 (def max-requests 2)
 
-(def client (org.httpkit.client.HttpClient. max-requests))
+(defonce client (org.httpkit.client.HttpClient. max-requests))
 
 (defn compose-urls [tags]
   (map #(format search-api-url %) tags))
